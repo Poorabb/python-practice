@@ -14,4 +14,11 @@ For each test case, output the longest common prefix. If there is no common pref
 
 str = "flower flow flight"
 result = str.split()
-print(result)
+comparator = result[1]
+print(comparator)
+ans = list(comparator)
+print(ans)
+comp = '' 
+for i in ans:
+    comp+=i
+    print(comp)
