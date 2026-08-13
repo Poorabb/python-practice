@@ -16,3 +16,23 @@
 # For each test case, output a sorted array containing the distinct elements
 # from both arr1 and arr2.
 
+arr1 = [1,3,4,5,7]
+arr2 = [2,3,5,10]
+
+result_arr = []
+
+range = min(len(arr1),len(arr2))
+pointer1 = 0
+pointer2 = 0 
+
+while pointer1 < len(arr1):
+    if arr1[pointer1] >= arr2[pointer2]:
+        result_arr.append(arr1[pointer1])
+        pointer1+=1
+    else:
+        result_arr.append(arr2[pointer2])
+        pointer2+=1
+
+ans = set(result_arr)
+
+print(ans)
