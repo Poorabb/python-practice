@@ -1,3 +1,4 @@
 list = ["flower"," flow"] 
-if "fl" in list:
-    print("HAI MC ") 
+
+if "flower".startswith("fl"):
+    print("is common long prefix")

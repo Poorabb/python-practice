@@ -13,12 +13,24 @@ Output Format
 For each test case, output the longest common prefix. If there is no common prefix, output -1.'''
 
 str = "flower flow flight"
-result = str.split()
-comparator = result[1]
-print(comparator)
-ans = list(comparator)
-print(ans)
+list_of_words = str.split()
+first = list_of_words[1]
+print(first)
+letters = list(first)
+print(letters)
 comp = '' 
-for i in ans:
-    comp+=i
-    print(comp)
+for i in letters:
+    new = comp + i
+    pre = True 
+    for j in list_of_words: 
+        if j.startswith(new):
+            continue
+        else:
+            pre = False
+            break
+    if pre:
+        comp = new
+    else:
+        break
+    
+print(comp)
