@@ -64,3 +64,5 @@ for i in range(1,len(nums)):
     sum+=nums[i-1]
     if 2 * sum + nums[i] == total: 
         print("Equilibrium index: ", i)
+        exit()
+print(-1)
