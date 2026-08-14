@@ -19,20 +19,25 @@
 arr1 = [1,3,4,5,7]
 arr2 = [2,3,5,10]
 
-result_arr = []
+result_arr = []  
 
-range = min(len(arr1),len(arr2))
-pointer1 = 0
-pointer2 = 0 
 
-while pointer1 < len(arr1):
-    if arr1[pointer1] >= arr2[pointer2]:
+pointer1 = 0 
+pointer2 = 0
+
+while pointer1 < len(arr1) and pointer2 < len(arr2):
+    if arr1[pointer1] < arr2[pointer2]:
         result_arr.append(arr1[pointer1])
         pointer1+=1
-    else:
+    elif arr1[pointer1] > arr2[pointer2]:
         result_arr.append(arr2[pointer2])
         pointer2+=1
+    else:
+        result_arr.append(arr1[pointer1])
+        pointer1+=1
+        pointer2+=1
 
-ans = set(result_arr)
+result_arr.extend(arr1[pointer1:])
+result_arr.extend(arr2[pointer2:])
 
-print(ans)
+print(set(result_arr))
